@@ -5,10 +5,10 @@ export const runtime = 'edge';
 
 export async function GET(
   request: Request,
-  { params }: { params: { path: string[] } }
+  { params }: { params: Promise<{ path: string[] }> }  // ✅ params 变成 Promise
 ) {
+  const { path } = await params;  // ✅ 添加 await 解析 Promise
   const gameOrigin = process.env.NEXT_PUBLIC_GAME_ORIGIN || 'https://openfront.io';
-  const path = params.path.join('/');
   const url = `${gameOrigin}/${path}`;
 
   try {
