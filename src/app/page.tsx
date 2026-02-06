@@ -96,4 +96,34 @@ export default function Home() {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg p-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">延迟统计</h2>
+            <LatencyStats gameOrigin={gameOrigin} mode={connectionMode} />
+          </div>
+        </div>
+
+        <div className="bg-white rounded-xl shadow-lg p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <div className="space-y-4 text-gray-600">
+            <p>
+              <strong className="text-gray-900">直连模式：</strong>直接访问游戏源站，不经过加速，延迟可能较高。
+            </p>
+            <p>
+              <strong className="text-gray-900">CDN 加速：</strong>通过 Cloudflare Workers 边缘代理，自动选择最佳路径，降低延迟。
+            </p>
+            <p>
+              <strong className="text-gray-900">游戏加速器：</strong>专为游戏优化的加速模式，提供更稳定的连接和更低的延迟。
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer className="bg-white border-t border-gray-200 mt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <p className="text-center text-gray-600">
+            © 2024 Game Accelerator. 使用 Cloudflare Workers 边缘加速技术。
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
